@@ -1,0 +1,7 @@
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\bin\Debug\Lib.Core.dll
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\bin\Debug\Lib.Core.pdb
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\obj\Debug\Lib.Properties.Resource.resources
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\obj\Debug\Lib.Core.csproj.GenerateResource.Cache
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\obj\Debug\Lib.Core.dll
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\obj\Debug\Lib.Core.pdb
+E:\GitSpace\Lib\SourceCode\Lib\Lib.Core\obj\Debug\Lib.Core.csprojResolveAssemblyReference.cache
