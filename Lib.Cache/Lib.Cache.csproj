@@ -39,12 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CacheEntry.cs" />
-    <Compile Include="CacheItem.cs" />
-    <Compile Include="CacheItemPolicy.cs" />
-    <Compile Include="CacheKey.cs" />
+    <Compile Include="Base\CacheEntry.cs" />
+    <Compile Include="Base\CacheItem.cs" />
+    <Compile Include="Base\CacheItemPolicy.cs" />
+    <Compile Include="Base\CacheKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Store\CacheStore.cs" />
+    <Compile Include="Base\CacheStore.cs" />
     <Compile Include="Store\LibMemoryCacheStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
