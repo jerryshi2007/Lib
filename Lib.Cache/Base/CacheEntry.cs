@@ -19,8 +19,11 @@ namespace Lib.Cache
 
         private object _value;
 
-        private DateTime _utcCreated;
-        private DateTime _utcAbsExp;
-        private TimeSpan _slidingExp;
+        private DateTime _utcCreateTime;
+        private DateTime _utcAbsExpire;
+        private TimeSpan _slidingExpire;
+
+
+
     }
 }
