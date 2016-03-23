@@ -10,9 +10,9 @@ namespace Lib.Cache
     /// Cache实体、缓存项
     /// 真正存储在CacheStore中的对象
     /// </summary>
-    internal class CacheEntry : CacheKey
+    public class CacheEntry : CacheKey
     {
-        internal CacheEntry(string key, object value)
+        public CacheEntry(string key, object value)
             : base(key)
         {
         }
@@ -22,8 +22,41 @@ namespace Lib.Cache
         private DateTime _utcCreateTime;
         private DateTime _utcAbsExpire;
         private TimeSpan _slidingExpire;
+        private DateTime _utcUpdateTime;
 
+        public object Value
+        {
+            get { return _value; }              
+        }
 
+        public DateTime UtcCreateTime
+        {
+            get { return _utcCreateTime; }
+            set { _utcCreateTime = value; }             
+        }
 
+        public DateTime UtcUpdateTime
+        {
+            get { return _utcUpdateTime; }
+            set { _utcUpdateTime = value; }
+        }
+
+        public DateTime UtcAbsExpire
+        {
+            get { return _utcAbsExpire; }
+            set { _utcAbsExpire = value; }
+        }
+
+        public bool IsExpiration
+        {
+            get { return _utcAbsExpire < DateTime.MaxValue; }
+        }
+
+        public TimeSpan SlidingExipre
+        {
+            get { return _slidingExpire; }
+        }
+
+        public CacheEntry(string key , object value, DateTimeOffset absExpire,TimeSpan )
     }
 }

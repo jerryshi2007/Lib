@@ -9,7 +9,7 @@ namespace Lib.Cache
     /// <summary>
     /// 
     /// </summary>
-    internal class CacheKey
+    public class CacheKey
     {
         internal CacheKey(String key)
         {
