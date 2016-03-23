@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,15 +26,17 @@ namespace Lib.Cache
         private TimeSpan _slidingExpire;
         private DateTime _utcUpdateTime;
 
+        private CacheEntryRemovedCallback _removedCallback;
+
         public object Value
         {
-            get { return _value; }              
+            get { return _value; }
         }
 
         public DateTime UtcCreateTime
         {
             get { return _utcCreateTime; }
-            set { _utcCreateTime = value; }             
+            set { _utcCreateTime = value; }
         }
 
         public DateTime UtcUpdateTime
@@ -57,6 +61,25 @@ namespace Lib.Cache
             get { return _slidingExpire; }
         }
 
-        public CacheEntry(string key , object value, DateTimeOffset absExpire,TimeSpan )
+        public CacheEntry(string key, object value, DateTimeOffset absExpire, TimeSpan slidingExpire, CacheItemPriority priority, Collection<ChangeMonitor> dependencies, CacheEntryRemovedCallback removedCallback, LibCache cache) : base(key)
+        {
+            if (value == null)
+                throw new ArgumentNullException("value");
+
+            this._value = value;
+            this._utcCreateTime = DateTime.UtcNow;
+            this._slidingExpire = slidingExpire;
+
+            if (this._slidingExpire > TimeSpan.Zero)
+            {
+                this._utcAbsExpire = this._utcCreateTime + this._slidingExpire;
+            }
+            else
+            {
+                this._utcAbsExpire = absExpire.UtcDateTime;
+            }
+
+            this._removedCallback = removedCallback;
+        }
     }
 }

@@ -44,10 +44,11 @@
     <Compile Include="Base\CacheItem.cs" />
     <Compile Include="Base\CacheItemPolicy.cs" />
     <Compile Include="Base\CacheKey.cs" />
-    <Compile Include="Lib\LibMemoryCacheEntryChangeMonitor.cs" />
+    <Compile Include="Lib\LibCache.cs" />
+    <Compile Include="Lib\LibCacheEntryChangeMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\CacheStore.cs" />
-    <Compile Include="Lib\LibMemoryCacheStore.cs" />
+    <Compile Include="Lib\LibCacheStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
